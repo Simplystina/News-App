@@ -19,7 +19,8 @@ const Footer = () => {
       <HStack mt="70px" align="flex-start" justifyContent="space-between">
         <Text color="#11142D"  fontSize="24px" fontFamily="Cormorant Upright" maxW="400px">
             
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+        Where News meets Inspiration: Broaden Your Perspective, Expand Your Horizons
+        Unveiling Stories, Igniting Conversations: Engage with News That Resonates
         </Text>
         <VStack color="#515151" fontSize="16px">
             <Text 

@@ -1,8 +1,8 @@
 import { Box , Text, flex , Avatar,HStack} from '@chakra-ui/react'
 import React from 'react'
-import Footer from '../Components/Footer'
-import Post from '../Components/Post'
-import Navbar from '../Components/Navbar'
+import Footer from '../../Components/Footer'
+import Post from '../../Components/Post'
+import Navbar from '../../Components/Navbar'
 
 const author = () => {
   return (
