@@ -1,7 +1,16 @@
 @import url('http://fonts.googleapis.com/css?family=Cormorant+Upright');
 @import url('http://fonts.googleapis.com/css?family=Open+Sans');
 @import url('http://fonts.googleapis.com/css?family=Poppins');
-
+@use postcss-preset-env {
+    stage: 0;
+  }
+  
+  :root {
+    --color-background: #000119;
+    --stroke-width: calc(1em / 16);
+    --font-weight: 700;
+    --letter-spacing: calc(1em / 8);
+  }
 
 * Style The Dropdown Button */
 .dropbtn {
@@ -100,9 +109,10 @@
   .pagination{
     display: flex;
     align-items: center;
-   justify-content: flex-end;
-   background-color: white;
-   padding: 0 30px;
+     justify-content: flex-end;
+     background-color: white;
+     padding: 0 10px;
+     flex-wrap: wrap;
   }
 
   .pageItem{
@@ -110,14 +120,43 @@
     color: black;
     padding: 5px 10px;
      border-radius: 5px;
-    margin: 5px;
+    margin: 3px;
+    font-size: 12px;
   }
 
   .previous, .next{
       font-family: Poppins;
       color: #109BE9;
+      font-size: 12px;
   }
   
  .active{
     background-color: #109BE9;
  }
+
+ .copyright{
+    color: black;
+ }
+
+ 
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .textcontainer {
+    font-family: Poppins;
+    margin: 0;
+
+  }
+  
+  .text {
+    background-clip: text;
+    background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    color: var(--color-background);
+    font-weight: var(--font-weight);
+    letter-spacing: var(--letter-spacing);
+    padding: calc(--stroke-width / 2);
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: var(--stroke-width);
+  }

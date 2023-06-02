@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { HStack, Flex, Text, Box, VStack, Button, Img, Select} from '@chakra-ui/react'
+import { HStack, Flex, Text, Box, VStack, Button, Img, Select, Stack} from '@chakra-ui/react'
 import Post from '../Components/Post'
 import RecommendedPost from '../Components/RecommendedPost'
 import Footer from '../Components/Footer'
@@ -46,15 +46,15 @@ export default function Home() {
       </Head>
 
       <Navbar/>
-    <Box p ="5rem 3.5rem">
-       <Flex justify="space-between">
-          <Box w="50%">
+    <Box p ={["50px 10px","50px 30px","5rem 3.5rem"]}>
+       <Flex justify="space-between" flexDir={["column","column","row"]}>
+          <Box w={["100%","100%","50%"]}>
              <Text fontFamily="Poppins">Top Headlines in the {theCountry[0].source}</Text>
-             <Text color="white" fontFamily="Cormorant Upright" fontSize="52px" letterSpacing="0.3%" fontWeight="bold" p="10px">
+             <Text mb="20px" color="white" fontFamily="Cormorant Upright" fontSize={["30px","40px","52px"]} letterSpacing="0.3%" fontWeight="bold" p={["3px","5px","10px"]}>
              Stay Informed, Stay Ahead: Your Gateway to Breaking News and Engaging Stories!
              </Text>
-             <HStack mt="60px">
-               
+             <HStack mt="60px" display={["none","none","flex"]}>
+                
                {
                 filteredArticles.slice(4,6).map((item)=>{
                   return(
@@ -67,11 +67,11 @@ export default function Home() {
               }
             </HStack>
           </Box>
-          <Box w="40%" p="30px" bg="rgba(255, 255, 255, 0.1)" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px">
+          <Box w={["100%","100%","40%"]} p={["10px","20px","30px"]} bg="rgba(255, 255, 255, 0.1)" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px">
             <Text 
                 fontWeight="bold" 
                 letterSpacing="0.5%" 
-                fontSize="31px" 
+                fontSize={["16px","24px","31px" ]}
                 color="#FFFFFF"
                 mb="20px"
                 fontFamily="Poppins" 
@@ -81,19 +81,19 @@ export default function Home() {
                 filteredArticles.slice(0,3).map((item,id)=>{
                   return(
                   <Link href={`/news/${id}`} key={id}> 
-                    <HStack className='news-card' align="flex-start" w="100%" justify="space-between">
+                    <Flex flexDirection={["column","row","column","row"]} className='news-card' align="flex-start" w="100%" justify="space-between">
                     
-                        <Img bg='#909090' src={item.urlToImage}  w="50%" h="100px" />
+                        <Img bg='#909090' src={item.urlToImage}  w={["100%","50%","100%","50%"]} h="100px" />
                     
-                        <Box w="50%" >
+                        <Box w={["100%","50%","100%","50%"]} >
                              <HStack>
-                                <Text fontWeight="bold" letterSpacing="0.8%" fontSize="16px" fontFamily="Poppins"  color="#FFFFFF">{item.author.length > 14 ? `${item.author.slice(0, 14)}...` : item.author || 'Random'} 
+                                <Text fontWeight="bold" letterSpacing="0.8%" fontSize={["14px","16px"]} fontFamily="Poppins"  color="#FFFFFF">{item.author.length > 14 ? `${item.author.slice(0, 14)}...` : item.author || 'Random'} 
                                 </Text>
-                                <Text fontWeight="bold" letterSpacing="0.8%" fontSize="10px" fontFamily="Poppins"  color="#FFFFFF">{moment(item.publishedAt).startOf('day').fromNow()}</Text>
+                                <Text fontWeight="bold" letterSpacing="0.8%" fontSize={["8px","10px"]} fontFamily="Poppins"  color="#FFFFFF">{moment(item.publishedAt).startOf('day').fromNow()}</Text>
                              </HStack>
-                            <Text fontWeight="700" letterSpacing="0.5%" fontSize="16px" color="#FFFFFF" p="20px 0" fontFamily="Cormorant Upright" >{item.title.length > 60 ? `${item.title.slice(0, 60)}...` : item.title}</Text>
+                            <Text fontWeight="700" letterSpacing="0.5%" fontSize={["12px","14px","16px"]} color="#FFFFFF" p="20px 0" fontFamily="Cormorant Upright" >{item.title.length > 60 ? `${item.title.slice(0, 60)}...` : item.title}</Text>
                         </Box>
-                    </HStack>
+                    </Flex>
                   </Link>
                   )
                 })

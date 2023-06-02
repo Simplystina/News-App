@@ -25,7 +25,7 @@ export const fetchArticles = createAsyncThunk(
         const response = await axios.get('https://newsapi.org/v2/top-headlines', {
       params: {
         country: country,
-        apiKey: "809b3fb8deee40dd96644175706da955",
+        apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
          category: category,
          pageSize:100
       },
@@ -46,11 +46,11 @@ export const fetchArticles = createAsyncThunk(
     async ({word, country, category}, { rejectWithValue }) => {
       try {
         console.log( "state", country)
-        console.log(process.env.NEWS_API_KEY, "API KEY")
+        console.log(process.env.NEXT_PUBLIC_NEWS_API_KEY, "API KEY")
         const response = await axios.get('https://newsapi.org/v2/top-headlines', {
       params: {
         country: country,
-        apiKey: "809b3fb8deee40dd96644175706da955",
+        apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
          category: category,
          q: word,
          pageSize:100
@@ -82,7 +82,7 @@ export const newsSlice = createSlice({
       setSearchList: (state, action) => {
         state.searchList = [];
       },
-      
+
   },
 
   extraReducers: (builder) => {
@@ -124,7 +124,7 @@ export const newsSlice = createSlice({
       )
       .addMatcher(
         (action) => action.type === searchArticles.rejected.type,
-        (state) => {
+        (state, action) => {
             state.status = 'failed';
             state.error = action.payload;
             state.loading = false

@@ -1,4 +1,4 @@
-import { Box, Button, Center, HStack, Input, Spinner, Text } from '@chakra-ui/react'
+import { Box, Button, Center, HStack, Input, Spinner, Text , Flex} from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import Nav from '../Components/Nav'
 import { useSelector, useDispatch } from 'react-redux'
@@ -13,6 +13,8 @@ const search = () => {
 
     const dispatch = useDispatch()
     const [search, setSearch] = useState('')
+
+    const router = useRouter()
 
     const { articles, currentPage, status, error , loading, searchList} = useSelector((state) => state.news)
     
@@ -36,24 +38,30 @@ const search = () => {
         console.log("about to clear")
         setSearch('')
         dispatch(setSearchList())
-
+      
     }
 
-    useEffect(()=>{
-        console.log(searchList, "searchList")
-    })
+    const goBack = ()=>{
+        setSearch('')
+        dispatch(setSearchList())
+        router.push('/')
+    }
+
+   
     if(loading){
         return(
             <Box>
                 <Nav></Nav>
                 <Link onClick={clear} href='/'>
-                    <Button onClick={clear}  ml="40px" size="sm" fontSize="10px" leftIcon={<IoIosArrowBack/>}>Back</Button>
+                    <Button onClick={goBack}  ml="40px" size="sm" fontSize="10px" leftIcon={<IoIosArrowBack/>}>Back</Button>
                 </Link> 
-                <HStack w="100%" p="30px 100px">
-                    <Input value={search} onChange={handleChange} w="70%"/>
-                    <Button onClick={searchWord} w="20%" bg="#F36326">search</Button>
-                    <Button onClick={clear} w="20%" bg="#F36326">clear</Button>
-                </HStack>
+                <Flex w="100%" p={["30px 10px","20px 30px","30px 100px"]} flexDir={["column","row"]} justify="space-between">
+                    <Input value={search} onChange={handleChange} w={["100%","52%"]}/>
+                   <Flex w={["100%","52%"]} mt={["10px",0]}>
+                        <Button w="45%" onClick={searchWord}  bg="#F36326">search</ Button>
+                       <Button w="50%" onClick={clear}  bg="#F36326">clear</Button>
+                    </Flex>
+                </Flex>
                 <Center >
                     <Spinner size="lg"/>
                 </Center>
@@ -66,15 +74,17 @@ const search = () => {
         <Link onClick={clear} href='/'>
             <Button onClick={clear}  ml="40px" size="sm" fontSize="10px" leftIcon={<IoIosArrowBack/>}>Back</Button>
         </Link> 
-        <HStack w="100%" p="30px 100px">
-            <Input value={search} onChange={handleChange} w="70%"/>
-            <Button onClick={searchWord} w="20%" bg="#F36326">search</Button>
-            <Button onClick={clear} w="20%" bg="#F36326">clear</Button>
-        </HStack>
+        <Flex w="100%" p={["30px 10px","20px 30px","30px 100px"]} flexDir={["column","row"]} justify="space-between">
+            <Input value={search} onChange={handleChange} w={["100%","52%"]}/>
+            <Flex w={["100%","52%"]} mt={["10px",0]}>
+                <Button w="45%" onClick={searchWord}  bg="#F36326">search</ Button>
+                <Button w="50%" onClick={clear}  bg="#F36326">clear</Button>
+            </Flex>
+        </Flex>
        {
         searchList.length>0 ?  <SearchResult articles={searchList} />
         :
-        <Text fontSize="40px" fontFamily="Cormant Upright" fontStyle="italic" textAlign="center">No results Found</Text>
+        <Text fontSize={["20px","40px"]} fontFamily="Cormant Upright" fontStyle="italic" textAlign="center">No results Found</Text>
        }
     </Box>
   )

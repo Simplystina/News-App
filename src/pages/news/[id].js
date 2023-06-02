@@ -48,32 +48,32 @@ const news = () => {
         <Link href='/'>
             <Button ml="40px" size="sm" fontSize="10px" leftIcon={<IoIosArrowBack/>}>Back</Button>
         </Link> 
-        <Box p="30px 60px">
+        <Box p ={["20px 10px","20px 30px","30px 60px"]}>
              <Text fontFamily="Poppins" p="20px 0">{moment(articles[parseInt(id)]?.publishedAt).startOf('day').fromNow()}</Text>
-              <Text color="white" fontFamily="Cormorant Upright" fontSize="52px" letterSpacing="0.3%" fontWeight="bold" p="10px">
+              <Text color="white" fontFamily="Cormorant Upright" fontSize={["30px","40px","52px"]} letterSpacing="0.3%" fontWeight="bold" p={["3px","10px"]}>
                  {articles[parseInt(id)]?.title}
                </Text>
             <HStack mt="30px">
                 <Avatar></Avatar>
-                <Text fontSize="12px" fontWeight="700" color="#FFFFFF">written by {articles[parseInt(id)]?.author || articles[parseInt(id)]?.source?.name}</Text>
+                <Text fontSize={["10px","12px"]} fontWeight="700" color="#FFFFFF">written by {articles[parseInt(id)]?.author || articles[parseInt(id)]?.source?.name}</Text>
             </HStack>
         </Box>
-        <Box bg="white" p="80px">
-            <Text color="#515151" textAlign="justify" fontSize="16px" lineHeight="20px" fontWeight="400px" fontFamily="Open Sans" letterSpacing="0.5%">
+        <Box bg="white" p={["20px 10px","30px 30px","80px"]}>
+            <Text color="#515151" textAlign="justify" fontSize={["12px","14px","16px"]} lineHeight="20px" fontWeight="400px" fontFamily="Open Sans" letterSpacing="0.5%">
                {articles[parseInt(id)]?.description}
             </Text>
             <Img w="100%" src={articles[parseInt(id)]?.urlToImage}  h="100%" objectFit="cover"/>
-            <Text p="20px 0" textAlign="justify" fontFamily="Open Sans" color="#515151" fontSize="16px" lineHeight="20px" fontWeight="400px" letterSpacing="0.5%">
+            <Text p="20px 0" textAlign="justify" fontFamily="Open Sans" color="#515151" fontSize={["12px","14px","16px"]}lineHeight="20px" fontWeight="400px" letterSpacing="0.5%">
                {articles[parseInt(id)]?.content}
             </Text>
            <Link href={`${articles[parseInt(id)]?.urlToImage}`}>
-                <Button  rightIcon={<GoLinkExternal/>} fontSize="14px" colorScheme="blackAlpha">News website</Button>
+                <Button  rightIcon={<GoLinkExternal/>} fontSize={["12px","14px","16px"]} colorScheme="blackAlpha">News website</Button>
            </Link> 
             <HStack mt="10px">
-                <Text fontFamily="Open Sans" textAlign="justify" color="#515151" fontSize="20px" lineHeight="20px" fontWeight="400px" letterSpacing="0.5%">
+                <Text fontFamily="Open Sans" textAlign="justify" color="#515151" fontSize={["14px","16px","20px"]} lineHeight="20px" fontWeight="400px" letterSpacing="0.5%">
                 News Source:
                 </Text>
-                <Text fontFamily="Open Sans" textAlign="justify" color="#515151" fontSize="16px" lineHeight="20px" fontWeight="400px" letterSpacing="0.5%">
+                <Text fontFamily="Open Sans" textAlign="justify" color="#515151" fontSize={["12px","14px","16px"]} lineHeight={["14px","16px","20px"]} fontWeight="400px" letterSpacing="0.5%">
                 {articles[parseInt(id)]?.source.name}
                 </Text>
             </HStack>

@@ -11,9 +11,9 @@ const RecommendedPost = () => {
 
     const nums = [1,2]
   return (
-     <Box p ="5rem 4rem" bg="white">
-        <Text fontWeight="700" letterSpacing="0.5%" fontSize="31px" color="#11142D" mb="20px">Recommended For You</Text>
-        <SimpleGrid columns={2} spacing={8}>
+     <Box p={["30px 10px","30px 20px","5rem 4rem"]} bg="white">
+        <Text fontWeight="700" letterSpacing="0.5%" fontSize={["20px","25px","31px"]} color="#11142D" mb="20px">Recommended For You</Text>
+        <SimpleGrid columns={[1,2]} spacing={8}>
             {
                 filteredArticles.slice(-2).map((item)=>{
                     return(
@@ -23,9 +23,9 @@ const RecommendedPost = () => {
                                 <Text pos="absolute" bottom={0} fontSize="10px" bg="white" color="#11142D" p="20px">{item.author}</Text>
                             </Box>
                             
-                            <Text p="10px 0" fontWeight="700" letterSpacing="0.5%" fontSize="24px" color="#11142D" fontFamily="Cormorant Upright" >{item.description}
+                            <Text p="10px 0" fontWeight="700" letterSpacing="0.5%" fontSize={["16px","20px","24px"]} color="#11142D" fontFamily="Cormorant Upright" >{item.description}
                             </Text>
-                            <Text fontFamily="Poppins"  fontWeight="700" letterSpacing="0.5%" fontSize="12px" color="#9A9AB0">{moment(item.publishedAt).subtract(1, 'days').calendar()}</Text>
+                            <Text fontFamily="Poppins"  fontWeight="700" letterSpacing="0.5%" fontSize={["10px","12px"]} color="#9A9AB0">{moment(item.publishedAt).subtract(1, 'days').calendar()}</Text>
                        </Box>
                     )
                 })

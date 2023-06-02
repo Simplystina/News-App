@@ -30,7 +30,7 @@ function Pagination({  }) {
 
   return (
     <>
-       <Post text="Our Latest Post" currentArticles={currentArticles}></Post>
+      <Post text="Our Latest Post" currentArticles={currentArticles}></Post>
       <ReactPaginate
         breakLabel="..."
         nextLabel="next >"

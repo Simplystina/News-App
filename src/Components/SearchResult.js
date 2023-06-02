@@ -35,9 +35,9 @@ const SearchResult = ({articles}) => {
   };
 
   return (
-    <Box p ="5rem 4rem" bg="white">
+    <Box p ={["50px 10px","50px 30px","5rem 4rem"]} bg="white">
   
-     <Flex justifyContent="space-between">
+     <Flex justifyContent="space-between" flexDir={["column","row"]}>
         <Text fontWeight="700" letterSpacing="0.5%" fontSize="31px" color="#11142D" mb="20px">Search Result</Text>
         <ReactPaginate
            breakLabel="..."
@@ -58,21 +58,21 @@ const SearchResult = ({articles}) => {
         />
      </Flex>
    
-    <SimpleGrid columns={4} spacing={8}>
+    <SimpleGrid columns={[1,2,3,4]} spacing={[4,8]}>
         {
             currentArticles.map((item,id)=>{
                 return(
-                <Link href={`/news/${id}`} key={id}>
-                    <Box onClick={clear} className='news-card'>
+                    <Link href={`/news/${id}`} key={id}>
+                    <Box className='news-card'>
                         <Box pos="relative" bg='#909090' w="100%" height='500px'>
                            <Img w="100%" src={item.urlToImage}  h="100%" objectFit="cover"/>
-                            <Text pos="absolute" bottom={0} fontSize="10px" bg="white" color="#11142D" p="20px">{item?.source?.name}</Text>
+                            <Text pos="absolute" bottom={0} fontSize={["8px","10px"]} bg="white" color="#11142D" p="20px">{item?.source?.name}</Text>
                         </Box>
                         
                         <Box p="10px" className='news-card-content'>
-                           <Text p="10px 0" fontWeight="700" letterSpacing="0.5%" fontSize="24px" color="#11142D" fontFamily="Cormorant Upright" >{item.title}
+                           <Text p="10px 0" fontWeight="700" letterSpacing="0.5%" fontSize={["16px","20px","24px"]} color="#11142D" fontFamily="Cormorant Upright" >{item.description}
                             </Text>
-                           <Text fontFamily="Poppins"  fontWeight="700" letterSpacing="0.5%" fontSize="12px" color="#9A9AB0">{moment(item.publishedAt).subtract(1, 'days').calendar()}</Text>
+                           <Text fontFamily="Poppins"  fontWeight="700" letterSpacing="0.5%" fontSize={["10px","12px"]} color="#9A9AB0">{moment(item.publishedAt).subtract(1, 'days').calendar()}</Text>
                         </Box>
                    </Box>
                 </Link>
