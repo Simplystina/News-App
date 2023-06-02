@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## News Project
+This is a news project that allows users to browse and read the latest news articles from various sources. The project is built using Next.js framework and React library. It utilizes the News API to fetch and display news articles.
 
-## Getting Started
+## Features
+Browse news articles from different sources
+Filter news articles by category, sources, countries
+Search for specific news articles
+Read full articles on the source website
 
-First, run the development server:
+## Installation
+Follow the instructions below to run the project on your local machine:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# Step 1
+clone the project directory
+```git clone <repository_url>```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Step 2
+Navigate to the project directory
+```cd news-project```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# Step 3
+Install the dependencies
+```npm install```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Step 4
+Set up environment variables:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Create a .env.local file in the root directory of the project.
+Add the following environment variables to the .env.local file:
 
-## Learn More
+```NEXT_PUBLIC_NEWS_API_KEY=<your_news_api_key>```
 
-To learn more about Next.js, take a look at the following resources:
+Replace <your_news_api_key> with your News API key. You can obtain an API key by signing up at News API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Step 5
+Run the development server:
+```npm run dev```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+6. Open your browser and visit http://localhost:3000 to see the project running.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies Used
+Next.js
+React
+News API
+React-icons
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deployment
+This project was deployed by vercel and the deployment url is located here (https://my-news-app-brown.vercel.app/)[https://my-news-app-brown.vercel.app/}
+Please note that the deployed url doesn't display well on the browser because of the restriction of the development plan used. The development plan only works on localhost and not on a deployed link as specified by [NewsAPI.org](newsapi.org)
+So please run on localhost to view full site functionalities
+## Acknowledgments
+*This project was created for my assessment for the Ibx frontend engineering.
+
+## Conclusion
