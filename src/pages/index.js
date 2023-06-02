@@ -1,8 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import { HStack, Flex, Text, Box, VStack, Button, Img, Select, Stack} from '@chakra-ui/react'
-import Post from '../Components/Post'
 import RecommendedPost from '../Components/RecommendedPost'
 import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar'
@@ -11,7 +8,7 @@ import { fetchArticles, setCurrentPage, setCountry } from '../features/News/News
 import { useEffect } from 'react'
 import moment from 'moment'
 import { countries } from '../services'
-import Pagination from '../Components/PaginatedPost'
+import PaginatedPost from '../Components/PaginatedPost'
 import Link from 'next/link'
 
 export default function Home() {
@@ -103,7 +100,7 @@ export default function Home() {
        </Flex>
     </Box>
   </div>
-  <Pagination/>
+  <PaginatedPost/>
   <RecommendedPost></RecommendedPost>
   <Footer></Footer>
   </>

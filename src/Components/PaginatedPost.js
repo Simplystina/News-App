@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
 import { useSelector, useDispatch } from 'react-redux';
 import Post from './Post';
-import '../styles/globals.css'
 
-function Pagination({  }) {
+function Pagination({ }) {
 
     const { articles, totalItems,  currentPage, status, error, country } = useSelector((state) => state.news);
 
