@@ -12,27 +12,23 @@ Follow the instructions below to run the project on your local machine:
 
 # Step 1
 clone the project directory
-```git clone <repository_url>```
+```git clone <[[repository_url](https://github.com/Simplystina/News-App/tree/main)>```
 
 # Step 2
-Navigate to the project directory
-```cd news-project```
+Install the dependencies
+```yarn install```
 
 # Step 3
-Install the dependencies
-```npm install```
-
-# Step 4
 Set up environment variables:
 
-Create a .env.local file in the root directory of the project.
+Create an .env.local file in the root directory of the project.
 Add the following environment variables to the .env.local file:
 
 ```NEXT_PUBLIC_NEWS_API_KEY=<your_news_api_key>```
 
-Replace <your_news_api_key> with your News API key. You can obtain an API key by signing up at News API.
+Replace <your_news_api_key> with your News API key. You can obtain an API key by signing up at News API at [newsapi.org](newsapi.org).
 
-# Step 5
+# Step 4
 Run the development server:
 ```npm run dev```
 
@@ -44,12 +40,16 @@ Next.js
 React
 News API
 React-icons
+Chakra-ui
+React Redux toolkit
 
 ## Deployment
 This project was deployed by vercel and the deployment url is located here (https://my-news-app-brown.vercel.app/)[https://my-news-app-brown.vercel.app/}
-Please note that the deployed url doesn't display well on the browser because of the restriction of the development plan used. The development plan only works on localhost and not on a deployed link as specified by [NewsAPI.org](newsapi.org)
+Please note that the deployed url doesn't display well on the browser because of the restriction on the development plan used. The development plan only works on localhost and not on a deployed link as specified by [NewsAPI.org](newsapi.org)
 So please run on localhost to view full site functionalities
-## Acknowledgments
-*This project was created for my assessment for the Ibx frontend engineering.
 
 ## Conclusion
+*This project was created for my assessment for the Ibx frontend engineering role.
+*This project fulfill all the functionalities specified in the assessment instructions
+
+
