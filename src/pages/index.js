@@ -53,9 +53,9 @@ export default function Home() {
              <HStack mt="60px" display={["none","none","flex"]}>
                 
                {
-                filteredArticles.slice(4,6).map((item)=>{
+                filteredArticles.slice(4,6).map((item, id)=>{
                   return(
-                    <Box>
+                    <Box key={id}>
                           <Img bg='#909090' src={item.urlToImage}  w="200px" h="100px" />
                         <Text fontWeight="700" letterSpacing="0.5%" fontSize="16px" color="#FFFFFF" p="20px 0">{item.title}</Text>
                       </Box>

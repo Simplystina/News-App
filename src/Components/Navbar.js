@@ -79,8 +79,8 @@ const Navbar = () => {
     <Box h="1px" w="100%" border= "1px solid rgba(255, 255, 255, 1)"></Box>
     <Box p={["5px 10px","5px 30px","5px 4rem"]}>
     
-      <Flex fontFamily="Open Sans" justifyContent="space-between" w="100%">
-        <Box display={["block","block","none"]}>
+      <Flex fontFamily="Open Sans" justifyContent="space-between" w="100%" align="center">
+        <Box display={["flex","flex","none"]} >
           <Menu >
             <MenuButton fontSize="10px" size="sm" as={Button} rightIcon={<AiOutlineDown/>}>
                   {category === "general"? 'category' : category}
@@ -102,8 +102,8 @@ const Navbar = () => {
              </MenuList>
           </Menu>
         </Box>
-        <HStack justifyContent="space-between" spacing={[2,4]}>
-          <HStack spacing={3} justifyContent="space-between" display={["none","none","block"]}>
+        <HStack justifyContent="space-between" spacing={[2,4]} >
+            <HStack spacing={5} justifyContent="space-between" display={["none","none","flex"]}>
             {
               categories.map((cate)=>{
                 return(
@@ -116,16 +116,15 @@ const Navbar = () => {
                 )
               })
             }
-          </HStack>
+            </HStack>
             <div class="dropdown">
               <Text fontSize="12px" className="dropbtn">{theCountry[0].source}
               </Text>
               <div className="dropdown-content">
-                    
-                    {
-                 countries.map((item)=>{
+                {
+                 countries.map((item, id)=>{
                     return(
-                      <Text onClick={()=>handleSourceChange(item.shortcode)} cursor="pointer" fontFamily="Poppins" fontSize="12px"
+                      <Text key={id} onClick={()=>handleSourceChange(item.shortcode)} cursor="pointer" fontFamily="Poppins" fontSize="12px"
                       p="10px" className='dropdwn-link' color="black">{item.source}</Text>
                     )
                   })

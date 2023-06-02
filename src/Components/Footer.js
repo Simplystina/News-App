@@ -8,7 +8,7 @@ const Footer = () => {
       <Box p={["10px","20px","30px"]} bg="#109BE9">
         <Flex justify="space-between" align="center" flexDir={["column","column","row"]}>
             <Text fontSize={["30px","50px","70px"]} color="#ffffff" fontWeight="bold" fontFamily="Cormorant Upright">Sign up for Our Newsletters</Text>
-            <Text fontSize={["10px","14px","16px"]} letterSpacing="0.5%" color="#ffffff" fontFamily="Poppins" pb="5px">The best newletters you'll come across the whole globe is right at your doorstep. Take the opportunity now!</Text>
+            <Text fontSize={["10px","14px","16px"]} letterSpacing="0.5%" color="#ffffff" fontFamily="Poppins" pb="5px">The best newletters you will come across the whole globe is right at your doorstep. Take the opportunity now!</Text>
         </Flex>
         <HStack pt="20px 0">
             <Input fontSize="16px" color="#9A9AB0" bg="white" _placeholder="input your email address here"/>

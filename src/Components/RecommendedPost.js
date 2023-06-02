@@ -9,15 +9,15 @@ const RecommendedPost = () => {
     // Filter articles with authors to display at the front of the page
   const filteredArticles = articles.filter((article) => article.author);
 
-    const nums = [1,2]
+  
   return (
      <Box p={["30px 10px","30px 20px","5rem 4rem"]} bg="white">
         <Text fontWeight="700" letterSpacing="0.5%" fontSize={["20px","25px","31px"]} color="#11142D" mb="20px">Recommended For You</Text>
         <SimpleGrid columns={[1,2]} spacing={8}>
             {
-                filteredArticles.slice(-2).map((item)=>{
+                filteredArticles.slice(-2).map((item, id)=>{
                     return(
-                        <Box>
+                        <Box key={id}>
                             <Box pos="relative" bg='#909090' w="100%" height='500px'>
                                <Img w="100%" src={item.urlToImage}  h="100%" objectFit="cover"/>
                                 <Text pos="absolute" bottom={0} fontSize="10px" bg="white" color="#11142D" p="20px">{item.author}</Text>

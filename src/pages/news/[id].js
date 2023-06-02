@@ -11,7 +11,7 @@ import {GoLinkExternal} from 'react-icons/go'
 import Link from 'next/link'
 import {IoIosArrowBack} from "react-icons/io"
 
-const news = () => {
+const News = () => {
 
     const dispatch = useDispatch();
   
@@ -22,7 +22,6 @@ const news = () => {
     useEffect(()=>{
         dispatch(fetchArticles({country:"us"}));
         dispatch(setCountry("us"))
-        console.log(articles[parseInt(id)], "articles", id)
         
      },[dispatch])
 
@@ -85,4 +84,4 @@ const news = () => {
   )
 }
 
-export default news
+export default News

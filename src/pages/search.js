@@ -9,7 +9,7 @@ import Link from 'next/link'
 import {IoIosArrowBack} from "react-icons/io"
 import { useRouter } from 'next/router'
 
-const search = () => {
+const Search = () => {
 
     const dispatch = useDispatch()
     const [search, setSearch] = useState('')
@@ -90,4 +90,4 @@ const search = () => {
   )
 }
 
-export default search
+export default Search
