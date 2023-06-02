@@ -45,8 +45,8 @@ Chakra-ui
 React Redux toolkit
 
 ## Deployment
-This project was deployed by vercel and the deployment url is located here [https://my-news-app-brown.vercel.app/](https://my-news-app-brown.vercel.app/)
-Please note that the deployed url doesn't display well on the browser because of the restriction on the development plan used. The development plan only works on localhost and not on a deployed link as specified by [NewsAPI.org](newsapi.org)
+* This project was deployed using vercel and the deployment url is located here [https://my-news-app-brown.vercel.app/](https://my-news-app-brown.vercel.app/)
+* Please note that the deployed url doesn't display well on the browser because of the restriction on the development plan used. The development plan only works on localhost and not on a deployed link as specified by [NewsAPI.org](newsapi.org)
 So please run on localhost to view full site functionalities
 
 ## Conclusion
